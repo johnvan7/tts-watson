@@ -10,6 +10,10 @@ This package leverages IBM Watson's TTS A.P.I to stream audio of text using pyau
 
 [1] Can be installed with `brew install portaudio` (MAC OS) or `apt-get install portaudio19-dev` (Linux).
 
+## Installation
+
+Run in the package directory: `python setup.py install`
+
 ## CLI
 
 Your Waston credentials will be initially requested. A config file located at `~/.config-tts-watson.yml` will be created. 
