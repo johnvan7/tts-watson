@@ -9,7 +9,7 @@ class TtsWatson:
     ACCEPT = 'audio/wav'
 
     def __init__(self, apikey, voice = 'en-US_AllisonVoice',
-                 url = 'https://stream.watsonplatform.net/text-to-speech/api', 
+                 url = 'https://gateway-lon.watsonplatform.net/text-to-speech/api/', 
                  chunk = 2048):
         self.apikey = apikey
         self.voice = voice
