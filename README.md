@@ -1,6 +1,6 @@
 # IBM Watson TTS
 
-This package leverages IBM Watson's TTS A.P.I to stream audio of text using pyaudio. This improves performance response.
+This package leverages IBM Watson's TTS A.P.I to stream audio of text using pyaudio. This uses apikey instead of username and password.
 
 ## Requirements
 
@@ -9,10 +9,6 @@ This package leverages IBM Watson's TTS A.P.I to stream audio of text using pyau
 - **portaudio**[1]
 
 [1] Can be installed with `brew install portaudio` (MAC OS) or `apt-get install portaudio19-dev` (Linux).
-
-## Installation
-
-Run: `pip install tts-watson`
 
 ## CLI
 
@@ -25,7 +21,7 @@ Run in the command line: `tts-watson text to sound i want`. You will hear `text 
 ```python
 from tts_watson.TtsWatson import TtsWatson
 
-ttsWatson = TtsWatson('watson_user', 'watson_password', 'en-US_AllisonVoice') #[2] 
+ttsWatson = TtsWatson('watson_apikey', 'en-US_AllisonVoice') #[2] 
 ttsWatson.play("The text which i want to be a sound")
 ```
 
