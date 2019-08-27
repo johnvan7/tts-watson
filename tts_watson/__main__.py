@@ -13,9 +13,8 @@ def main():
     
     requests.packages.urllib3.disable_warnings()
     defaultConfig = {
-        'url': 'https://stream.watsonplatform.net/text-to-speech/api',
-        'user': 'user',
-        'password': 'password',
+        'url': 'https://gateway-lon.watsonplatform.net/text-to-speech/api/',
+        'apikey': 'apikey',
         'voice': 'en-US_AllisonVoice',
         'chunk': 2048
     }
@@ -33,16 +32,14 @@ def main():
     if not os.path.isfile(args.configFile):
         print("Config file '" + args.configFile + "' doesn't exist.")
         print("Creating it ...")
-        user = py3_input_conversion("Watson user: ")
-        password = py3_input_conversion("Watson password: ")
+        apikey = py3_input_conversion("Watson apikey: ")
         bconf = bunch.bunchify(conf)
-        bconf.user = user
-        bconf.password = password
+        bconf.apikey = apikey
         anyconfig.dump(bconf.toDict(), args.configFile)
     else:
         conf = anyconfig.load(args.configFile)
     bconf = bunch.bunchify(conf)
-    ttsWatson = TtsWatson(bconf.user, bconf.password, bconf.voice, bconf.url, bconf.chunk)
+    ttsWatson = TtsWatson(bconf.apikey, bconf.voice, bconf.url, bconf.chunk)
     ttsWatson.play(" ".join(args.text_to_transform))
 
 
